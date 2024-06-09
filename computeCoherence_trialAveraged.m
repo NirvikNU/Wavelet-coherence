@@ -16,7 +16,7 @@ function [MsquaredC,f,coi,Phase] = computeCoherence_trialAveraged(x,y,fb)
     crossCFS = mean(cwtx.*conj(cwty),3);  
 
     % Compute phase
-    Phase = angle(crossCFS);     
+    Phase = unwrap(angle(crossCFS));     
 
     % Compute autospectra
     cfsX = mean(abs(cwtx).^2,3);
