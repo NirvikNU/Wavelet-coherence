@@ -12,7 +12,7 @@ function [MsquaredC,f,coi,Phase] = computeCoherence_Classic(x,y,fb)
     crossCFS = cwtx.*conj(cwty);  
 
     % Compute phase
-    Phase = angle(crossCFS);    
+    Phase = unwrap(angle(crossCFS));    
 
     % Number of scales to smooth
     ns = min(floor(numel(fb.Scales)/2),fb.VoicesPerOctave);   
